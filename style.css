@@ -81,7 +81,7 @@ footer {
 
 }
 
-@keyframes arcenciel {
+ @keyframes arcenciel {
   0% { color: red; }
   14% { color: orange; }
   28% { color: yellow; }
@@ -99,6 +99,7 @@ footer {
 
 .evandetails {
   color: white;
+  
 }
 
 .evantitre {
