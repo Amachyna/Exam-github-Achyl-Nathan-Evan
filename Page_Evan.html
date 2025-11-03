@@ -1,43 +1,97 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title> 
-
-   <link rel="stylesheet" href="style.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body class="evanpage">
-    <div class="indexlien">
-        <a href="achylpage.html">page Achyl</a>
-        <a href="nathan_page.html">page Nathan</a>
-        <a href="index.html">page retours</a>
+  <div class="indexlien">
+    <a href="achylpage.html">page Achyl</a>
+    <a href="nathan_page.html">page Nathan</a>
+    <a href="index.html">page retours</a>
+  </div>
 
+  <div class="evantitre">
+    <h3>C'est ici que se trouve ma biographie</h3>
+  </div>
 
-    </div>
-    <div class="evantitre">
-        <h3>C'est ici que se trouve ma biographie</h3>
-    </div>
-    <img src="image/Evan_img.jpg" alt="hessoul" width="200">
-    <div class="evanparagraphe">
-        <p>je me nome Evan P.</p>
-        <p>Je suis un grand fans, et joueur de Rocket League semi-PRO. <br>
-      Je fais des études d'informatique en programmation. <br>
-       D'ailleurs j'aime bien aussi ça...</p>
-    </div>
-        <div class="evandetails">
-            <details>Exorcizamus te, omnis immundus spiritus, omnis satanica potestas, omnis incursio infernalis adversarii, omnis legio, omnis congregatio et secta diabolica, ergo draco maledicte, ut ecclesiam tuam secura, tibi facias libertate servire, te rogamus, audi nos !</details>  
-        </div> <br>
-    </p>
-    <div class="evanparagraphe">
-        <p> J'aime aussi beaucoup le Japon, la culture qui y est liée, que ce soit l'architecture, l'événement, l'ambiance.</p>
-        <p> J'ai décidé de me lancer dans l'informatique, parce que j'aime ça, par contre je ne suis pas super doué !    
-        <br> Honnêtement, j'adore voir que je prends en compétence chaque jour, même s'il y a peu de chance que je valide mon année. Je fais mon maximum pour compenser mon retard, donc si j'échoue, je n'aurai aucun regret !
-        </p>
-    </div>
+  <img src="image/Evan_img.jpg" alt="hessoul" width="200">
 
-    <footer> <a href="https://www.linkedin.com/learning/me/my-library/in-progress?u=43271628">Mon compte Linkedin</a>
-    </footer>
+  <div class="evanparagraphe">
+    <p>Je me nomme Evan P.</p>
+    <p>Je suis un grand fan et joueur de Rocket League semi-pro.<br>
+    Je fais des études d'informatique en programmation.<br>
+    D'ailleurs j'aime bien aussi ça...</p>
+  </div>
+
+  <div class="evandetails">
+    <details>
+      Exorcizamus te, omnis immundus spiritus, omnis satanica potestas, omnis incursio infernalis adversarii,
+      omnis legio, omnis congregatio et secta diabolica, ergo draco maledicte, ut ecclesiam tuam secura,
+      tibi facias libertate servire, te rogamus, audi nos !
+    </details>
+  </div>
+
+  <div class="evanparagraphe">
+    <p>J'aime aussi beaucoup le Japon, la culture qui y est liée, que ce soit l'architecture, les événements, l'ambiance.</p>
+    <p>J'ai décidé de me lancer dans l'informatique, parce que j'aime ça, même si je ne suis pas encore très doué !<br>
+    Honnêtement, j'adore voir mes progrès chaque jour. Même s'il y a peu de chance que je valide mon année, je fais de mon mieux pour compenser mon retard. Si j'échoue, je n'aurai aucun regret !</p>
+
+    <form>
+      <input type="checkbox" id="super" name="avis" value="super">
+      <label for="super">Ma page est super ?</label><br>
+
+      <input type="checkbox" id="bien" name="avis" value="bien">
+      <label for="bien">Ma page est bien ?</label><br>
+
+      <input type="checkbox" id="nul" name="avis" value="nul">
+      <label for="nul">Ma page est nulle ?</label><br><br>
+    </form>
+
+    <div id="message"></div>
+  </div>
+
+  <footer>
+    <a href="https://www.linkedin.com/learning/me/my-library/in-progress?u=43271628">Mon compte Linkedin</a>
+  </footer>
+
+  <script>
+    const superBox = document.getElementById("super");
+    const bienBox = document.getElementById("bien");
+    const nulBox = document.getElementById("nul");
+    const messageDiv = document.getElementById("message");
+
+    superBox.addEventListener("change", () => {
+      if (superBox.checked) {
+        messageDiv.textContent = "Merci beaucoup 😊";
+        bienBox.checked = false;
+        nulBox.checked = false;
+      } else {
+        messageDiv.textContent = "";
+      }
+    });
+
+    bienBox.addEventListener("change", () => {
+      if (bienBox.checked) {
+        messageDiv.textContent = "Merci, étant ma 1ère page, je m'améliorerai avec le temps 😄";
+        superBox.checked = false;
+        nulBox.checked = false;
+      } else {
+        messageDiv.textContent = "";
+      }
+    });
+
+    nulBox.addEventListener("change", () => {
+      if (nulBox.checked) {
+        messageDiv.textContent = "Votre avis est utile, qu'est-ce que je peux améliorer ? 🤔";
+        superBox.checked = false;
+        bienBox.checked = false;
+      } else {
+        messageDiv.textContent = "";
+      }
+    });
+  </script>
 </body>
 </html>
