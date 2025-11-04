@@ -81,7 +81,7 @@ footer {
 
 }
 
-@keyframes arcenciel {
+ @keyframes arcenciel {
   0% { color: red; }
   14% { color: orange; }
   28% { color: yellow; }
@@ -99,6 +99,7 @@ footer {
 
 .evandetails {
   color: white;
+  
 }
 
 .evantitre {
@@ -126,3 +127,10 @@ body.evanpage {
   z-index: -1;
 }
 
+body.achylfond {
+  background-image: url("image/fond.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: white; /* optionnel si ton image est sombre */
+}
